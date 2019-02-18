@@ -19,30 +19,29 @@ body {
 	right: 0;
 	z-index: 100;
 	transition: 0.15s linear all;
-}
 
-.navbar ul {
-	list-style-type: none;
-	position: absolute;
-	z-index: 10;
-	right: 20px;
-	top: 30px;
-	padding: 0px;
-}
+	ul {
+		list-style-type: none;
+		position: absolute;
+		z-index: 10;
+		right: 20px;
+		top: 30px;
+		padding: 0px;
 
-.navbar img {
-	margin-bottom: -50px;
-	position: absolute;
-	z-index: 0;
-	top: 20px;
+		a {
+			display: inline-block;
+			height: 20px;
+			padding: 10px;
+			color: #FFF;
+		}
+	}
 
-}
-
-.navbar ul a {
-	display: inline-block;
-	height: 20px;
-	padding: 10px;
-	color: #FFF;
+	img {
+		margin-bottom: -50px;
+		position: absolute;
+		z-index: 0;
+		top: 20px;
+	}
 }
 
 /* Navbar big */
@@ -50,23 +49,26 @@ body {
 .navbar.big {
 	height: 100px;
 	background-color: rgba(239, 83, 80, 0.1);
-}
 
-.navbar.big ul a::before {
-	height: 50px;
-	top: -50px;
-}
+	ul {
+		a::before {
+			height: 50px;
+			top: -50px;
+		}
 
-.navbar.big ul a::after {
-	height: 50px;
-	top: -50px;
-}
+		a::after {
+			height: 50px;
+			top: -50px;
+		}
 
-.navbar.big ul li {
-	margin-left: 20px;
-	margin-top: -10px;
-	border-radius: 7px;
-	position: relative;
+
+		li {
+			margin-left: 20px;
+			margin-top: -10px;
+			border-radius: 7px;
+			position: relative;
+		}
+	}
 }
 
 .navbar ul a:link {
@@ -126,18 +128,18 @@ body {
 	background-size: cover;
 	background-position-y: top;
 	background-position-x: center;
-}
 
-.intro h1 {
-	color: #FFFFFF;
-	font-family: 'Work Sans', sans-serif;
-	font-size: 62px;
-}
+	h1 {
+		color: #FFFFFF;
+		font-family: 'Work Sans', sans-serif;
+		font-size: 62px;
+	}
 
-span {
-	font-family: 'Indie Flower', cursive;
-	font-size: 94px;
-	font-style: italic;
+	span {
+		font-family: 'Indie Flower', cursive;
+		font-size: 94px;
+		font-style: italic;
+	}
 }
 
 .item {
