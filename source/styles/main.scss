@@ -1,3 +1,55 @@
+/* url */
+$url_bg: url(assets/background.jpg);
+
+/* color */
+$color_bg: rgba(239, 83, 80, 1);
+$color_bg_big: rgba(239, 83, 80, 0.1);
+$color_white: #FFFFFF;
+
+$color_web: #80D8FF;
+$color_cpp: #BA68C8;
+$color_python: #FF9E80;
+$color_java: #A7FFEB;
+
+$color_item1: #90CAF9;
+$color_item2: #FFCDD2;
+$color_item3: #C8E6C9;
+$color_item4: #E1BEE7;
+$color_item5: #FFF9C4;
+$color_item6: #FFCCBC;
+
+$color_cont1: #BBDEFB;
+$color_cont2: #FCE4EC;
+$color_cont3: #E8F5E9;
+$color_cont4: #EDE7F6;
+$color_cont5: #FFFDE7;
+$color_cont6: #FBE9E7;
+
+$color_modal: rgba(0,0,0,0.4);
+$color_skills: #424242;
+
+/* font */
+
+@mixin translate($x, $y) {
+	transform: translate($x, $y);
+}
+
+@mixin border-radius($radius) {
+	border-radius: $radius;
+}
+
+@mixin transition($transition...) {
+	transition: $transition;
+}
+
+@mixin box-sizing($box) {
+	box-sizing: $box;
+}
+
+@mixin box-shadow($shadow...) {
+	box-shadow: $shadow;
+}
+
 html {
 	scroll-behavior: smooth;
 }
@@ -9,7 +61,7 @@ body {
 /* Navbar section*/
 
 .navbar {
-	background-color: rgba(239, 83, 80, 1);
+	background-color: $color_bg;
 	padding: 10px 20px;
 	height: 50px;
 	overflow: hidden;
@@ -18,7 +70,7 @@ body {
 	left: 0;
 	right: 0;
 	z-index: 100;
-	transition: 0.15s linear all;
+	@include transition(0.15s linear all);
 
 	ul {
 		list-style-type: none;
@@ -28,11 +80,27 @@ body {
 		top: 30px;
 		padding: 0px;
 
+		li {
+			float: right;
+			background: #D32F2F;
+			margin-left: 20px;
+			margin-top: -30px;
+			@include border-radius(7px);
+			position: relative;
+			@include transition(0.22s linear all);
+
+
+			a:link {
+				text-decoration: none;
+				font-family: 'Work Sans', sans-serif;
+			}
+		}
+
 		a {
 			display: inline-block;
 			height: 20px;
 			padding: 10px;
-			color: #FFF;
+			color: $color_white;
 		}
 	}
 
@@ -48,7 +116,7 @@ body {
 
 .navbar.big {
 	height: 100px;
-	background-color: rgba(239, 83, 80, 0.1);
+	background-color: $color_bg_big;
 
 	ul {
 		a::before {
@@ -65,31 +133,16 @@ body {
 		li {
 			margin-left: 20px;
 			margin-top: -10px;
-			border-radius: 7px;
+			@include border-radius(7px);
 			position: relative;
 		}
 	}
 }
 
-.navbar ul a:link {
-	text-decoration: none;
-	color: #FFFFFF !important;
-	font-family: 'Work Sans', sans-serif;
-}
 
 /* Navbar small */
 
-.navbar ul li {
-	display: inline-block;
-	float: right;
-	color: #FFFFFF !important;
-	background: #D32F2F;
-	margin-left: 20px;
-	margin-top: -30px;
-	border-radius: 7px;
-	position: relative;
-	transition: 0.22s linear all;
-}
+
 
 .navbar ul a::before {
 	content: ' ';
@@ -100,7 +153,7 @@ body {
 	position: absolute;
 	top: -40px;
 	left: 10px;
-	transition: 0.15s linear all;
+	@include transition(0.15s linear all);
 }
 
 .navbar ul a::after {
@@ -112,7 +165,7 @@ body {
 	position: absolute;
 	top: -40px;
 	right: 10px;
-	transition: 0.15s linear all;
+	@include transition(0.15s linear all);
 }
 
 
@@ -123,14 +176,13 @@ body {
 	padding-top: 170px;
 	margin-top: -1px;
 	height: 100vh;
-	background-color: #F3E5F5;
-	background-image: url('assets/background.jpg');
+	background-image: $url_bg;
 	background-size: cover;
 	background-position-y: top;
 	background-position-x: center;
 
 	h1 {
-		color: #FFFFFF;
+		color: $color_white;
 		font-family: 'Work Sans', sans-serif;
 		font-size: 62px;
 	}
@@ -144,61 +196,61 @@ body {
 
 .item {
 	width: 27%;
-    box-sizing: border-box;
+    @include box-sizing(border-box);
     text-align: center;
     height: 500px;
     display: inline-block;
     margin: 50px;
-    border-radius: 10px;
+    @include border-radius(10px);
 	font-family: 'Work Sans', sans-serif;
 }
 
 #item1 {
-	background: #90CAF9;
+	background: $color_item1;
 }
 
 #content1 {
-	background: #BBDEFB;
+	background: $color_cont1;
 }
 
 #item2 {
-	background: #FFCDD2;
+	background: $color_item2;
 }
 
 #content2 {
-	background: #FCE4EC;
+	background: $color_cont2;
 }
 
 #item3 {
-	background: #C8E6C9;
+	background: $color_item3;
 }
 
 #content3 {
-	background: #E8F5E9;
+	background: $color_cont3;
 }
 
 #item4 {
-	background: #E1BEE7;
+	background: $color_item4;
 }
 
 #content4 {
-	background: #EDE7F6;
+	background: $color_cont4;
 }
 
 #item5 {
-	background: #FFF9C4;
+	background: $color_item5;
 }
 
 #content5 {
-	background: #FFFDE7;
+	background: $color_cont5;
 }
 
 #item6 {
-	background: #FFCCBC;
+	background: $color_item6;
 }
 
 #content6 {
-	background: #FBE9E7;
+	background: $color_cont6;
 }
 
 .item img {
@@ -236,19 +288,19 @@ body {
 
 /* Carousel */
 #web {
-	background: #80D8FF;
+	background: $color_web;
 }
 
 #cpp {
-	background: #BA68C8;
+	background: $color_cpp;
 }
 
 #python {
-	background: #FF9E80;
+	background: $color_python;
 }
 
 #java {
-	background: #A7FFEB;
+	background: $color_java;
 }
 
 .skills {
@@ -260,7 +312,7 @@ body {
 	position: absolute;
 	top: 50%;
 	left: 25%;
-	transform: translate(-50%, -50%);
+	@include translate(-50%, -50%);
 }
 
 .skills .slide {
@@ -271,10 +323,10 @@ body {
 	position: absolute;
 	top: 40%;
 	right: 30%;
-	transform: translate(50%, -50%);
+	@include translate(50%, -50%);
 	font-size: 60px;
 	font-family: 'Work Sans', sans-serif;
-	color: #424242;
+	color: $color_skills;
 }
 
 .footer {
@@ -289,7 +341,7 @@ body {
 	position: absolute;
 	top: 50%;
 	right: 13%;
-	transform: translate(50%, -50%);
+	@include translate(50%, -50%);
 	font-family: 'Work Sans', sans-serif;
 }
 
@@ -313,31 +365,30 @@ body {
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: $color_modal;
 }
 
 .modal-content {
   height: 700px;
-  box-sizing: border-box;
+  @include box-sizing(border-box);
   border: 1px solid #888;
   width: 1200px;
   position: fixed;
   text-align: center;
-  border-radius: 20px;
+  @include border-radius(20px);
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  @include translate(-50%, -50%);
 }
 
 .modal-content img {
 	height: 350px;
 	margin-top: 90px;
 	margin-bottom: 20px;
-	border-radius: 10px;
+	@include border-radius(10px);
 	border: 1px solid;
   	padding: 15px;
-  	box-shadow: 5px 15px 20px #888888;
+  	@include box-shadow(5px 15px 20px #888888);
 }
 
 .modal-content video {
@@ -373,69 +424,77 @@ li.active {
 		width: 27%;
 		height: 400px;
 		margin: 33px;
+		
+		img {
+			width: 300px;
+			@include border-radius(10px);
+		}
+
+		h3 {
+		    font-size: 20px;
+		}
 	}
 
-	.item img {
-		width: 300px;
-		border-radius: 10px;
+	.skills {
+		padding-top: 150px;
+
+		.slide {
+			height: 500px;
+
+			h2 {
+				font-size: 50px;
+			}
+
+			img {
+				height: 330px;
+			}		
+		}
 	}
 
-	.item h3 {
-	    font-size: 20px;
-	}
+	#web {
+		img {
+			height: 300px;
+			margin-left: 30px;
+		}
 
-	.slide h2 {
-		font-size: 50px;
-	}
-
-	.slide img {
-		height: 330px;
-	}
-
-	#web img {
-		height: 300px;
-		margin-left: 30px;
-	}
-
-	#web h2 {
-		width: 550px;
-		right: 22%;
-	}
-
-	.slide {
-		height: 500px;
-	}
-
-	.footer ul li {
-		font-size: 40px;
-		margin-top: 20px;
+		h2 {
+			width: 450px;
+			right: 22%;
+		}			
 	}
 
 	.footer {
 		height: 80px;
+
+		p {
+			right: 16%;
+		}
+
+		ul li {
+			font-size: 40px;
+			margin-top: 20px;
+		}
 	}
 
-	.footer p {
-		right: 16%;
-	}
+	.modal {
+		img {
+			height: 250px;
+			@include border-radius(10px);
+		}
 
-	.modal img {
-		height: 250px;
-		border-radius: 10px;
-	}
+		p {
+			margin-top: 50px;
+			font-size: 25px;
+		}
 
-	.modal p {
-		margin-top: 50px;
-		font-size: 25px;
-	}
+		video {
+			height: 300px;
+		}
 
-	.modal video {
-		height: 300px;
-	}
-
-	.modal-content {
-		height: 550px;
-		width: 800px;
+		.modal-content {
+			height: 550px;
+			width: 800px;
+		}
 	}
 }
 
@@ -445,45 +504,51 @@ li.active {
 		width: 28%;
 		height: 300px;
 		margin: 20px;
-	}
 
-	.item img {
-		width: 200px;
-	}
+		img {
+			width: 200px;
+		}
 
-	.item h3 {
-	    font-size: 18px;
+		h3 {
+		    font-size: 18px;
+		}
 	}
+	.skills {
+		.slide {
+			h2 {
+				font-size: 40px;
+			}
 
-	.slide h2 {
-		font-size: 40px;
+			img {
+				height: 200px;
+			}
+		}
 	}
+	
+	#web {
+		h2 {
+			width: 400px;
+			right: 20%;
+		}
 
-	.slide img {
-		height: 200px;
-	}
-
-	#web h2 {
-		width: 400px;
-		right: 20%;
-	}
-
-	#web img {
-		height: 200px;
+		img {
+			height: 200px;
+		}
 	}
 
 	.footer {
 		height: 100px;
+
+		p {
+			right: 21%;
+		}
+
+		ul li {
+			font-size: 50px;
+			margin-top: 30px;
+		}
 	}
 
-	.footer p {
-		right: 21%;
-	}
-
-	.footer ul li {
-		font-size: 50px;
-		margin-top: 30px;
-	}
 
 	.modal video {
 		height: 300px;
