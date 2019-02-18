@@ -8,12 +8,14 @@ window.onload = window.onscroll = function() {
 
 	console.log(scrlamnt);
 
-    if (scrlamnt > document.getElementById("skills").offsetTop) {
+    if (scrlamnt > (document.getElementById("skills").offsetTop 
+    					- document.getElementById("navbar").clientHeight)) {
 		document.getElementById("goto-skills").classList.add("active");
 		document.getElementById("goto-intro").classList.remove("active");
 		document.getElementById("goto-portfolio").classList.remove("active");
 
-	} else if (scrlamnt > document.getElementById("portfolio").offsetTop) {
+	} else if (scrlamnt > (document.getElementById("portfolio").offsetTop 
+    					- document.getElementById("navbar").clientHeight)) {
 		document.getElementById("goto-skills").classList.remove("active");
 		document.getElementById("goto-intro").classList.remove("active");
 		document.getElementById("goto-portfolio").classList.add("active");
