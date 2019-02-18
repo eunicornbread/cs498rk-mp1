@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>MP1 Starter</title>
+    
     <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
 </head>
@@ -14,60 +16,100 @@
     <div id="navbar" class="navbar big">
     	<img src="assets/logo.png" height="50px">
     	<ul>
-    		<li><a href="#skills"><i class="fas fa-code"></i> Skills</a></li>
-    		<li><a href="#portfolio"><i class="fas fa-th"></i> Portfolio</a></li>
-    		<li><a href="#intro"><i class="fas fa-user-alt"></i> Intro</a></li>
+    		<li id="goto-skills">
+                <a href="#skills"><i class="fas fa-code"></i> Skills</a>
+            </li>
+    		<li id="goto-portfolio">
+                <a href="#portfolio"><i class="fas fa-th"></i> Portfolio</a>
+            </li>
+    		<li id="goto-intro" class="active">
+                <a href="#intro"><i class="fas fa-user-alt"></i> Intro</a>
+            </li>
     	</ul>
     </div>
 
-    <dir class="intro">
+    <div class="intro" id="intro">
     	<h1>Hi! I'm <span>Eunice</span>.</h1>
-    </dir>
+    </div>
 
-    <div class="portfolio">
+    <div class="portfolio" id="portfolio">
         <h1>Portfolio</h1>
-    	
         <div class="item" id="item1">
     		<h3>Naive-Bayes Classifier</h3>
-    		<p>An implementation of the Naive Bayes Algorithm in C++</p>
     		<img src="assets/naivebayes.png">
     	</div>
 
+        <div class="modal" id="modal1">
+            <div class="modal-content" id="content1">
+                <img src="assets/naivebayes.png">
+                <p>An implementation of the Naive Bayes Algorithm in C++</p>
+            </div>
+        </div>
+
+
     	<div class="item" id="item2">
     		<h3>Planet Game</h3>
-    		<p>An exploring game in C++ using the openFrameworks library</p>
     		<img src="assets/planetgame.png">
     	</div>
 
+        <div class="modal" id="modal2">
+            <div class="modal-content" id="content2">
+                <video controls><source src="assets/video.mp4"></video>
+                <p>An exploring game in C++ using the openFrameworks library</p>
+            </div>
+        </div>
+
     	<div class="item" id="item3">
-    		<h3>Refereed Delegation of Computation</h3>
-    		<p>An implementation of the RDoc protocol in Python</p>
+    		<h3>RDoc Protocol</h3>
     		<img src="assets/pureproject.png">
     	</div>
 
+        <div class="modal" id="modal3">
+            <div class="modal-content" id="content3">
+                <img src="assets/pureproject.png">
+                <p>Refereed Delegation of Computation in Python</p>
+            </div>
+        </div>
+
     	<div class="item" id="item4">
     		<h3>Gradient Rasterization Engine</h3>
-    		<p>An image generator in C++</p>
     		<img src="assets/gradient.png">
     	</div>
 
+        <div class="modal" id="modal4">
+            <div class="modal-content" id="content4">
+                <img src="assets/gradient.png">
+                <p>An image generator in C++</p>
+            </div>
+        </div>
+
+
     	<div class="item" id="item5">
     		<h3>Sushi Go Game</h3>
-    		<p>Implemented the game engine and AI algorithm of the game Sushi Go in Java</p>
     		<img src="assets/sushigo.png">
     	</div>
 
+        <div class="modal" id="modal5">
+            <div class="modal-content" id="content5">
+                <img src="assets/sushigo.png">
+                <p>The Sushi Go game engine and AI algorithm in Java</p>
+            </div>
+        </div>
+
     	<div class="item" id="item6">
     		<h3>Snake Game</h3>
-    		<p>An implementation of the snake game in C++</p>
     		<img src="assets/snakegame.png">
     	</div>
 
-        <br>
-        <p></p>
+        <div class="modal" id="modal6">
+            <div class="modal-content" id="content6">
+                <img src="assets/snakegame.png">
+                <p>An implementation of the snake game in C++</p>
+            </div>
+        </div>
     </div>
 
-    <div class="skills">
+    <div class="skills" id="skills">
     	<div class="slide" id="java">
             <img src="assets/java.png">
             <h2>3 Years Java Experience</h2>   
