@@ -107,31 +107,72 @@ window.onclick = function(event) {
 
 /* Carousel */
 
-document.getElementById("left").onclick = function() {
-	moveLeft();
-	updateSlide();
+
+document.getElementById("goleft").onclick = function(e) {
+	e.preventDefault();
+	prevSlide();
 }
-document.getElementById("right").onclick = function() {
-	moveRight();
-	updateSlide();
+document.getElementById("goright").onclick = function(e) {
+	e.preventDefault();
+	nextSlide();
 }
 
 var index = 0;
-updateSlide(index);
+var slides = document.getElementsByClassName("slide");
+var sliding = false;
 
-function moveLeft() {
-	index = index + 1;
+function nextSlide() {
+	if (!sliding) {
+		sliding = true;
+
+		var current = slides[index];
+		index = (index + 1 + slides.length) % slides.length;
+		var next = slides[index];
+
+		next.classList.add("right");
+		next.classList.add("visible");
+		next.classList.add("moving");
+		current.classList.add("moving");
+
+		setTimeout(function() {
+			current.classList.add("left");
+			next.classList.remove("right");
+		}, 25);
+
+		setTimeout(function() {
+			current.classList.remove("visible");
+			current.classList.remove("moving");
+			next.classList.remove("moving");
+			current.classList.remove("left");
+			sliding = false;
+		}, 550);
+	}
 }
 
-function moveRight() {
-	index = index - 1;
-}
+function prevSlide() {
+	if (!sliding) {
+		sliding = true;
 
-function updateSlide() {
-  var slides = document.getElementsByClassName("slide");
-  index = (index + slides.length) % slides.length;
-  for (var i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  slides[index].style.display = "block";
+		var current = slides[index];
+		index = (index - 1 + slides.length) % slides.length;
+		var next = slides[index];
+
+		next.classList.add("left");
+		next.classList.add("visible");
+		next.classList.add("moving");
+		current.classList.add("moving");
+
+		setTimeout(function() {
+			current.classList.add("right");
+			next.classList.remove("left");
+		}, 25);
+
+		setTimeout(function() {
+			current.classList.remove("visible");
+			current.classList.remove("moving");
+			next.classList.remove("moving");
+			current.classList.remove("right");
+			sliding = false;
+		}, 550);
+	}
 }
